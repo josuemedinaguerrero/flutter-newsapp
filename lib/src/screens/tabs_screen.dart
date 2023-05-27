@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/src/screens/screens.dart';
 import 'package:provider/provider.dart';
 
 class TabsPage extends StatelessWidget {
@@ -41,9 +42,7 @@ class _Paginas extends StatelessWidget {
       controller: navegacionModel.pageController,
       physics: const NeverScrollableScrollPhysics(),
       children: <Widget>[
-        Container(
-          color: Colors.red,
-        ),
+        const Tab1Page(),
         Container(
           color: Colors.green,
         )
