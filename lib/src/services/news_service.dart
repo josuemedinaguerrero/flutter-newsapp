@@ -37,6 +37,8 @@ class NewsService with ChangeNotifier {
     notifyListeners();
   }
 
+  List<Article>? get getArticulosCategoriaSeleccionada => categoryArticles[_selectedCategory];
+
   getTopHeadlines() async {
     final url = Uri.https('newsapi.org', 'v2/top-headlines', {'country': 'us', 'apiKey': _apiKey});
 
