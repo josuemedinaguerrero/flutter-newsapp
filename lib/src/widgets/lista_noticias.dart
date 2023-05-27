@@ -86,14 +86,15 @@ class _TarjetaImagen extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: ClipRRect(
-          borderRadius: const BorderRadius.only(topLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
-          child: noticia.urlToImage != null
-              ? FadeInImage(
-                  placeholder: const AssetImage('assets/img/giphy.gif'),
-                  image: NetworkImage(noticia.urlToImage!),
-                  fit: BoxFit.cover,
-                )
-              : const Image(image: AssetImage('assets/img/no-image.png'))),
+        borderRadius: const BorderRadius.only(topLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
+        child: noticia.urlToImage != null
+            ? FadeInImage(
+                placeholder: const AssetImage('assets/img/giphy.gif'),
+                image: NetworkImage(noticia.urlToImage!),
+                fit: BoxFit.cover,
+              )
+            : const Image(image: AssetImage('assets/img/no-image.png')),
+      ),
     );
   }
 }

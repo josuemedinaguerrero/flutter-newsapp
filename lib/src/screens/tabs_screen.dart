@@ -41,19 +41,17 @@ class _Paginas extends StatelessWidget {
     return PageView(
       controller: navegacionModel.pageController,
       physics: const NeverScrollableScrollPhysics(),
-      children: <Widget>[
-        const Tab1Page(),
-        Container(
-          color: Colors.green,
-        )
+      children: const <Widget>[
+        Tab1Page(),
+        Tab2Page(),
       ],
     );
   }
 }
 
 class _NavegacionModel with ChangeNotifier {
-  int _paginaActual = 1;
-  final PageController _pageController = PageController(initialPage: 1);
+  int _paginaActual = 0;
+  final PageController _pageController = PageController(initialPage: 0);
 
   int get paginaActual => _paginaActual;
 
