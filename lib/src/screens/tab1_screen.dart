@@ -11,7 +11,7 @@ class Tab1Page extends StatelessWidget {
     final headlines = Provider.of<NewsService>(context).headlines;
 
     return Scaffold(
-      body: ListaNoticias(noticias: headlines),
+      body: headlines.isEmpty ? const Center(child: CircularProgressIndicator()) : ListaNoticias(noticias: headlines),
     );
   }
 }

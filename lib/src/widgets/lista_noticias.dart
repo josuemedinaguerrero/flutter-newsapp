@@ -86,13 +86,14 @@ class _TarjetaImagen extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: ClipRRect(
-        borderRadius: const BorderRadius.only(topLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
-        child: FadeInImage(
-          placeholder: const AssetImage('assets/img/giphy.gif'),
-          image: NetworkImage(noticia.urlToImage),
-          fit: BoxFit.cover,
-        ),
-      ),
+          borderRadius: const BorderRadius.only(topLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
+          child: noticia.urlToImage != null
+              ? FadeInImage(
+                  placeholder: const AssetImage('assets/img/giphy.gif'),
+                  image: NetworkImage(noticia.urlToImage!),
+                  fit: BoxFit.cover,
+                )
+              : const Image(image: AssetImage('assets/img/no-image.png'))),
     );
   }
 }
@@ -106,7 +107,7 @@ class _TarjetaBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Text(noticia.description),
+      child: Text(noticia.description ?? ''),
     );
   }
 }
